@@ -1,7 +1,8 @@
 "use client";
 
 import { theme } from "@/theme";
-import { ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactNode, useRef } from "react";
 import { ThemeProvider } from "styled-components";
 
 interface ProvidersProps {
@@ -9,5 +10,13 @@ interface ProvidersProps {
 }
 
 export default function Providers({ children }: ProvidersProps) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  const clientRef = useRef(new QueryClient());
+
+  return (
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={clientRef.current}>
+        {children}
+      </QueryClientProvider>
+    </ThemeProvider>
+  );
 }
