@@ -1,11 +1,16 @@
-import { getProducts } from "@/api";
+"use client";
+
+import { Product } from "@/api";
 import Card from "@/components/Card/Card";
+import { Wrapper } from "./ProductList.styled";
 
-export default async function ProductList() {
-  const products = await getProducts();
+interface ProductListProps {
+  products: Product[];
+}
 
+export default function ProductList({ products }: ProductListProps) {
   return (
-    <>
+    <Wrapper>
       {products.map(({ id, description, image, price, title }) => (
         <Card
           key={id}
@@ -17,6 +22,6 @@ export default async function ProductList() {
           title={title}
         />
       ))}
-    </>
+    </Wrapper>
   );
 }

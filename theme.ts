@@ -15,6 +15,7 @@ export const theme = {
     l: "2rem",
   },
   space: {
+    s: "10px",
     m: "20px",
   },
   boxShadow: (color: Color) => `5px 5px 100px ${color}`,

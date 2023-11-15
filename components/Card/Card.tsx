@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/Button/Button";
+import Tooltip from "@/components/Tooltip/Tooltip";
 import { ImageProps } from "next/image";
 import {
   Description,
@@ -31,7 +32,9 @@ export default function Card({
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Tooltip text={description}>
+        <Description>{description}</Description>
+      </Tooltip>
 
       <ImageWrapper src={src} alt={alt} sizes="25vw" width={300} height={200} />
 
