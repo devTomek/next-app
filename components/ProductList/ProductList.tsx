@@ -2,7 +2,8 @@
 
 import { Product } from "@/api";
 import Card from "@/components/Card/Card";
-import { Wrapper } from "./ProductList.styled";
+import { productRoute } from "@/routes";
+import { LinkWrapper, Wrapper } from "./ProductList.styled";
 
 interface ProductListProps {
   products: Product[];
@@ -12,15 +13,16 @@ export default function ProductList({ products }: ProductListProps) {
   return (
     <Wrapper>
       {products.map(({ id, description, image, price, title }) => (
-        <Card
-          key={id}
-          alt={title}
-          buttonText="Add to cart"
-          description={description}
-          price={price}
-          src={image}
-          title={title}
-        />
+        <LinkWrapper key={id} href={productRoute(id)}>
+          <Card
+            alt={title}
+            buttonText="Add to cart"
+            description={description}
+            price={price}
+            src={image}
+            title={title}
+          />
+        </LinkWrapper>
       ))}
     </Wrapper>
   );

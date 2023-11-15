@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   width: 300px;
   height: 600px;
   border-radius: 25px;
-  cursor: pointer;
   transform: scale(1);
   transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
   padding: ${({ theme }) => theme.space.m};
