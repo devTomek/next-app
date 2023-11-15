@@ -1,5 +1,6 @@
 import Providers from "@/Providers";
 import Header from "@/components/Header/Header";
+import { roboto } from "@/fonts";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 
@@ -11,10 +12,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         <Providers>
           <Header />
-          {children}
+          <main
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
