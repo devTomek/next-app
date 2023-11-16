@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/Button/Button";
 import Tooltip from "@/components/Tooltip/Tooltip";
 import { ImageProps } from "next/image";

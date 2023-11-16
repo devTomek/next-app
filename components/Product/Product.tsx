@@ -1,5 +1,3 @@
-"use client";
-
 import { Product } from "@/api";
 import {
   Description,
@@ -21,7 +19,7 @@ export default function Product({ product }: ProductProps) {
         alt="product page image"
         src={product.image}
         sizes="50vw"
-        width={250}
+        width={500}
         height={500}
       />
       <RightContent>

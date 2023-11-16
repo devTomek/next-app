@@ -1,5 +1,3 @@
-"use client";
-
 import { Product } from "@/api";
 import Card from "@/components/Card/Card";
 import { productRoute } from "@/routes";

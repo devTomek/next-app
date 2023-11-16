@@ -1,3 +1,5 @@
+"use client";
+
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.header<{ $scrolledDown: boolean }>`

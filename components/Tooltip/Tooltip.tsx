@@ -1,3 +1,5 @@
+"use client";
+
 import { roboto } from "@/fonts";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import { ReactNode } from "react";
