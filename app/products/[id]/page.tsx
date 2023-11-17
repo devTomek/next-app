@@ -1,5 +1,28 @@
 import Product from "@/components/Product/Product";
 import { getProduct } from "@/lib/api";
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: { id: number };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const product = await getProduct(params.id);
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: product.title,
+    description: "Product page",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_API_URL || ""),
+    openGraph: {
+      images: [product.image, ...previousImages],
+    },
+  };
+}
 
 interface Params {
   id: number;
