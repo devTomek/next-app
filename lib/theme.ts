@@ -8,6 +8,11 @@ const color = {
 type ColorKeys = keyof typeof color;
 type Color = (typeof color)[ColorKeys];
 
+const breakpoint = {
+  laptop: "1440px",
+  tablet: "768px",
+} as const;
+
 export const theme = {
   fontSize: {
     s: "0.9rem",
@@ -27,6 +32,7 @@ export const theme = {
     bolder: 700,
   },
   color,
+  breakpoint,
 } as const;
 
 export type Theme = typeof theme;

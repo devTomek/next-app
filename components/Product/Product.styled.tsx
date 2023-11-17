@@ -1,12 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 100px 0;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      flex-direction: column;
+      margin: 0;
+    }
+  `}
 `;
 
 export const ImageWrapper = styled(Image)`
