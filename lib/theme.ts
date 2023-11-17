@@ -13,6 +13,7 @@ export const theme = {
     s: "0.9rem",
     m: "1rem",
     l: "2rem",
+    xl: "4rem",
   },
   space: {
     s: "10px",
