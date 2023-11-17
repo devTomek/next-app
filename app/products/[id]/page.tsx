@@ -1,5 +1,5 @@
-import { getProduct } from "@/api";
 import Product from "@/components/Product/Product";
+import { getProduct } from "@/lib/api";
 
 interface Params {
   id: number;

@@ -1,4 +1,4 @@
-import { Product } from "@/api";
+import { Product } from "@/lib/api";
 import {
   Description,
   ImageWrapper,

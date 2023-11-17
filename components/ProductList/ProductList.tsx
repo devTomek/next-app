@@ -1,6 +1,6 @@
-import { Product } from "@/api";
 import Card from "@/components/Card/Card";
-import { productRoute } from "@/routes";
+import { Product } from "@/lib/api";
+import { productRoute } from "@/lib/routes";
 import { LinkWrapper, Wrapper } from "./ProductList.styled";
 
 interface ProductListProps {

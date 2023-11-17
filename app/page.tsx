@@ -1,5 +1,5 @@
-import { getProducts } from "@/api";
 import ProductList from "@/components/ProductList/ProductList";
+import { getProducts } from "@/lib/api";
 import "./globals.css";
 import "./reset.css";
 

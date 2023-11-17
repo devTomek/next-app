@@ -1,6 +1,6 @@
-import Providers from "@/lib/Providers";
 import Header from "@/components/Header/Header";
-import { roboto } from "@/fonts";
+import Providers from "@/lib/Providers";
+import { roboto } from "@/lib/fonts";
 import StyledComponentsRegistry from "@/lib/styled-components-registry";
 import type { Metadata } from "next";
 import { ReactNode } from "react";

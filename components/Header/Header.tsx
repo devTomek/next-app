@@ -1,8 +1,8 @@
 "use client";
 
 import { useScrolledDown } from "@/hooks/useScrolledDown";
+import { homeRoute } from "@/lib/routes";
 import yoda from "@/public/yoda.svg";
-import { homeRoute } from "@/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { Wrapper } from "./Header.styled";
