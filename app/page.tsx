@@ -3,7 +3,7 @@ import { getProducts } from "@/lib/api";
 import "./globals.css";
 import "./reset.css";
 
-export default async function Home() {
+export default async function HomePage() {
   const products = await getProducts();
 
   return <ProductList products={products} />;
