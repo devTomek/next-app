@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import PageContainer from "@/components/PageContainer/PageContainer";
 import Providers from "@/lib/Providers";
 import { roboto } from "@/lib/fonts";
 import StyledComponentsRegistry from "@/lib/styled-components-registry";
@@ -17,14 +18,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <StyledComponentsRegistry>
           <Providers>
             <Header />
-            <main
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              {children}
+            <main>
+              <PageContainer>{children}</PageContainer>
             </main>
           </Providers>
         </StyledComponentsRegistry>

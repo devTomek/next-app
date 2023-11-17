@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  max-width: 1024px;
 `;
 
 export const ImageWrapper = styled(Image)`
@@ -18,7 +17,9 @@ export const RightContent = styled.div`
   width: 100%;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  // TODO: font-size
+`;
 
 export const Description = styled.p``;
 
