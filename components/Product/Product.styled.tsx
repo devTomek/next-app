@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  height: 80vh;
   align-items: center;
+  margin-top: 100px;
 `;
 
 export const ImageWrapper = styled(Image)`

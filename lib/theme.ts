@@ -16,6 +16,7 @@ export const theme = {
     xl: "4rem",
   },
   space: {
+    xs: "5px",
     s: "10px",
     m: "20px",
   },
