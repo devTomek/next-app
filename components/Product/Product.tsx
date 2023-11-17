@@ -19,8 +19,8 @@ export default function Product({ product }: ProductProps) {
         alt="product page image"
         src={product.image}
         sizes="50vw"
-        width={500}
         height={500}
+        width={500}
       />
       <RightContent>
         <Title>{product.title}</Title>

@@ -13,7 +13,13 @@ export default function Header() {
   return (
     <Wrapper $scrolledDown={scrolledDown}>
       <Link href={homeRoute()}>
-        <Image src={yoda} alt="header icon" width={100} height={75} />
+        <Image
+          src={yoda}
+          alt="header icon"
+          width={100}
+          height={75}
+          sizes="10vw"
+        />
       </Link>
     </Wrapper>
   );

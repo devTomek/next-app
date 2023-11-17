@@ -34,7 +34,7 @@ export default function Card({
         <Description>{description}</Description>
       </Tooltip>
 
-      <ImageWrapper src={src} alt={alt} sizes="25vw" width={300} height={200} />
+      <ImageWrapper src={src} alt={alt} sizes="25vw" width={200} height={300} />
 
       <Footer>
         <Price>${price}</Price>
