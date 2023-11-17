@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/components/Card/Card";
 import { Product } from "@/lib/api";
 import { productRoute } from "@/lib/routes";
@@ -19,6 +21,10 @@ export default function ProductList({ products }: ProductListProps) {
             price={price}
             src={image}
             title={title}
+            onClick={(e) => {
+              e.preventDefault();
+              alert("TODO");
+            }}
           />
         </LinkWrapper>
       ))}

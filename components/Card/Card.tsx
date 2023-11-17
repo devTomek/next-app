@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import Tooltip from "@/components/Tooltip/Tooltip";
 import { ImageProps } from "next/image";
+import { MouseEvent } from "react";
 import {
   Description,
   Footer,
@@ -17,6 +18,7 @@ interface CardProps {
   description: string;
   price: number;
   buttonText: string;
+  onClick?: (e: MouseEvent) => void;
 }
 
 export default function Card({
@@ -26,6 +28,7 @@ export default function Card({
   description,
   price,
   title,
+  onClick,
 }: CardProps) {
   return (
     <Wrapper>
@@ -38,7 +41,7 @@ export default function Card({
 
       <Footer>
         <Price>${price}</Price>
-        <Button>{buttonText}</Button>
+        <Button onClick={onClick}>{buttonText}</Button>
       </Footer>
     </Wrapper>
   );
