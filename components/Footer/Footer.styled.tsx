@@ -9,7 +9,6 @@ export const Wrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 100px;
   padding: ${({ theme }) => css`0 ${theme.space.m}`};
   margin-top: ${({ theme }) => theme.space.m};
   border-top: ${({ theme }) => css`1px solid ${theme.color.lightGrey}`};

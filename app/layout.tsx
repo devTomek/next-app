@@ -5,7 +5,11 @@ import Providers from "@/lib/Providers";
 import { roboto } from "@/lib/fonts";
 import { ReactNode } from "react";
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+interface RootLayout {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayout) {
   return (
     <html lang="en">
       <body className={roboto.className}>
