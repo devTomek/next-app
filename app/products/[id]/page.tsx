@@ -2,10 +2,18 @@ import Product from "@/components/Product/Product";
 import { getProduct } from "@/lib/api";
 import { Metadata, ResolvingMetadata } from "next";
 
-type Props = {
-  params: { id: number };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+interface Params {
+  id: number;
+}
+
+interface SearchParams {
+  [key: string]: string | string[] | undefined;
+}
+
+interface Props {
+  params: Params;
+  searchParams: SearchParams;
+}
 
 export async function generateMetadata(
   { params }: Props,
@@ -16,7 +24,7 @@ export async function generateMetadata(
 
   return {
     title: product.title,
-    description: "Product page",
+    description: product.description,
     metadataBase: new URL(process.env.NEXT_PUBLIC_API_URL || ""),
     openGraph: {
       images: [product.image, ...previousImages],
