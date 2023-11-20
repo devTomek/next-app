@@ -26,6 +26,7 @@ export const ImageWrapper = styled(Image)`
 
 export const RightContent = styled.div`
   width: 100%;
+  max-width: 500px;
 `;
 
 export const Title = styled.h1`
