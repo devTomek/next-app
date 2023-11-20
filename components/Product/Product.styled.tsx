@@ -20,6 +20,7 @@ export const ImageWrapper = styled(Image)`
   object-fit: contain;
   height: 500px;
   width: 100%;
+  max-width: 500px;
   margin-right: 50px;
 `;
 
