@@ -1,4 +1,5 @@
 import Button from "@/components/Button/Button";
+import FadeIn from "@/components/FadeIn/FadeIn";
 import Tooltip from "@/components/Tooltip/Tooltip";
 import { ImageProps } from "next/image";
 import { MouseEvent } from "react";
@@ -19,6 +20,7 @@ interface CardProps {
   price: number;
   buttonText: string;
   onClick?: (e: MouseEvent) => void;
+  index?: number;
 }
 
 export default function Card({
@@ -29,20 +31,29 @@ export default function Card({
   price,
   title,
   onClick,
+  index = 0,
 }: CardProps) {
   return (
-    <Wrapper>
-      <Title>{title}</Title>
-      <Tooltip text={description}>
-        <Description>{description}</Description>
-      </Tooltip>
+    <FadeIn index={index}>
+      <Wrapper>
+        <Title>{title}</Title>
+        <Tooltip text={description}>
+          <Description>{description}</Description>
+        </Tooltip>
 
-      <ImageWrapper src={src} alt={alt} sizes="25vw" width={200} height={300} />
+        <ImageWrapper
+          src={src}
+          alt={alt}
+          sizes="25vw"
+          width={200}
+          height={300}
+        />
 
-      <Footer>
-        <Price>${price}</Price>
-        <Button onClick={onClick}>{buttonText}</Button>
-      </Footer>
-    </Wrapper>
+        <Footer>
+          <Price>${price}</Price>
+          <Button onClick={onClick}>{buttonText}</Button>
+        </Footer>
+      </Wrapper>
+    </FadeIn>
   );
 }

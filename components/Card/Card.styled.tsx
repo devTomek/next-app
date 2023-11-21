@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  content-visibility: auto;
 
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow(theme.color.grey)};

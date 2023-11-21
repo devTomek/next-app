@@ -1,5 +1,6 @@
 "use client";
 
+import FadeIn from "@/components/FadeIn/FadeIn";
 import { Product, getProduct } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -25,19 +26,21 @@ export default function Product({ product }: ProductProps) {
   const { image, title, description, price } = data;
 
   return (
-    <Wrapper>
-      <ImageWrapper
-        alt="product page image"
-        src={image}
-        sizes="50vw"
-        height={500}
-        width={500}
-      />
-      <RightContent>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Price>${price}</Price>
-      </RightContent>
-    </Wrapper>
+    <FadeIn>
+      <Wrapper>
+        <ImageWrapper
+          alt="product page image"
+          src={image}
+          sizes="50vw"
+          height={500}
+          width={500}
+        />
+        <RightContent>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <Price>${price}</Price>
+        </RightContent>
+      </Wrapper>
+    </FadeIn>
   );
 }

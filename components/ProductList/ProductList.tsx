@@ -19,9 +19,10 @@ export default function ProductList({ products }: ProductListProps) {
 
   return (
     <Wrapper>
-      {data.map(({ id, description, image, price, title }) => (
+      {data.map(({ id, description, image, price, title }, index) => (
         <LinkWrapper key={id} href={productRoute(id)}>
           <Card
+            index={index}
             alt={title}
             buttonText="Add to cart"
             description={description}
