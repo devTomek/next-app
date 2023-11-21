@@ -20,7 +20,6 @@ interface CardProps {
   price: number;
   buttonText: string;
   onClick?: (e: MouseEvent) => void;
-  index?: number;
 }
 
 export default function Card({
@@ -31,10 +30,9 @@ export default function Card({
   price,
   title,
   onClick,
-  index = 0,
 }: CardProps) {
   return (
-    <FadeIn index={index}>
+    <FadeIn>
       <Wrapper>
         <Title>{title}</Title>
         <Tooltip text={description}>
