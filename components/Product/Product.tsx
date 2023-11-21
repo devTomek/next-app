@@ -1,3 +1,7 @@
+"use client";
+
+import { Product, getProduct } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
 import {
   Description,
   ImageWrapper,
@@ -8,18 +12,18 @@ import {
 } from "./Product.styled";
 
 interface ProductProps {
-  title: string;
-  price: number;
-  description: string;
-  image: string;
+  product: Product;
 }
 
-export default function Product({
-  description,
-  image,
-  price,
-  title,
-}: ProductProps) {
+export default function Product({ product }: ProductProps) {
+  const { id } = product;
+  const { data } = useQuery({
+    queryKey: [`product${id}`],
+    queryFn: () => getProduct(id),
+    initialData: product,
+  });
+  const { image, title, description, price } = data;
+
   return (
     <Wrapper>
       <ImageWrapper

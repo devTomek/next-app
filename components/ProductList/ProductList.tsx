@@ -1,8 +1,9 @@
 "use client";
 
 import Card from "@/components/Card/Card";
-import { Product } from "@/lib/api";
+import { Product, getProducts } from "@/lib/api";
 import { productRoute } from "@/lib/routes";
+import { useQuery } from "@tanstack/react-query";
 import { LinkWrapper, Wrapper } from "./ProductList.styled";
 
 interface ProductListProps {
@@ -10,9 +11,15 @@ interface ProductListProps {
 }
 
 export default function ProductList({ products }: ProductListProps) {
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+    initialData: products,
+  });
+
   return (
     <Wrapper>
-      {products.map(({ id, description, image, price, title }) => (
+      {data.map(({ id, description, image, price, title }) => (
         <LinkWrapper key={id} href={productRoute(id)}>
           <Card
             alt={title}
