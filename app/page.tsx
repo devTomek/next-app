@@ -1,8 +1,6 @@
 import ProductList from "@/components/ProductList/ProductList";
 import { getProducts } from "@/lib/api";
 import { Metadata } from "next";
-import "./globals.css";
-import "./reset.css";
 
 export const metadata: Metadata = {
   title: "Home",

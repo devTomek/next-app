@@ -4,6 +4,8 @@ import PageContainer from "@/components/PageContainer/PageContainer";
 import Providers from "@/lib/Providers";
 import { roboto } from "@/lib/fonts";
 import { ReactNode } from "react";
+import "./globals.css";
+import "./reset.css";
 
 interface RootLayout {
   children: ReactNode;
