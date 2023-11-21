@@ -1,7 +1,18 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { Variants, motion, useInView } from "framer-motion";
 import { ReactNode, useRef } from "react";
+
+const variants: Variants = {
+  hidden: {
+    opacity: 0,
+    transform: "translateY(50px)",
+  },
+  visible: {
+    opacity: 1,
+    transform: "translateY(0px)",
+  },
+};
 
 interface FadeInProps {
   children: ReactNode;
@@ -14,12 +25,10 @@ export default function FadeIn({ children }: FadeInProps) {
   return (
     <motion.div
       ref={divRef}
-      initial={{ opacity: 0, transform: "translateY(50px)" }}
-      animate={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? "translateY(0)" : "translateY(50px)",
-      }}
+      variants={variants}
       transition={{ duration: 1 }}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
     >
       {children}
     </motion.div>
